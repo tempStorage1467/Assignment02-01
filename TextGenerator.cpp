@@ -16,8 +16,10 @@
 
 TextGenerator::TextGenerator(const string& inputSeed,
                              const int& markovNumber,
+                             const int& numCharsToPredict,
                              const Map<string, Vector<string> >& inputSeedMap) {
     seed = inputSeed;
+    numCharsPredicted = numCharsToPredict;
     markovNum = markovNumber;
     seedMap = &inputSeedMap;
 }
@@ -36,7 +38,7 @@ string TextGenerator::getRandomText(unsigned int numCharsToGenerate) {
         possibleNextChars = seedMap->get(currentSeed);
         nextCharsIndexNum = randomInteger(0, possibleNextChars.size() - 1);
         outputText += possibleNextChars.get(nextCharsIndexNum);
-        currentSeed = outputText.substr(outputText.length() - markovNum - 1);
+        currentSeed = outputText.substr(outputText.length() - markovNum);
     }
 
     return outputText;

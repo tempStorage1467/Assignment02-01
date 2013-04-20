@@ -30,6 +30,7 @@ class TextGenerator {
  public:
     TextGenerator(const string& inputSeed,
                   const int& markovNumber,
+                  const int& numCharsToPredict,
                   const Map<string, Vector<string> >& inputSeedMap);
     string getRandomText(unsigned int numCharsToGenerate);
 };

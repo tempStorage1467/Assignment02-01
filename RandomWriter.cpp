@@ -75,6 +75,7 @@ int main() {
     // Iterate over seed map to generate random text
     TextGenerator generator = TextGenerator(mostCommonSeed,
                                             MARKOV_NUMBER,
+                                            NUM_CHARS_PREDICTED,
                                             seedMap);
     string randomText = generator.getRandomText(2000);
     cout << randomText << endl;
