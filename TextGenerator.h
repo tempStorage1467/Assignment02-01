@@ -19,15 +19,19 @@
 #include <string>
 #include "map.h"
 #include "vector.h"
+#include "random.h"
 
 class TextGenerator {
  private:
     string seed;
-    Map<string, Vector<string> > seedMap;
+    int markovNum;
+    int numCharsPredicted;
+    const Map<string, Vector<string> >* seedMap;
  public:
     TextGenerator(const string& inputSeed,
+                  const int& markovNumber,
                   const Map<string, Vector<string> >& inputSeedMap);
-    string getRandomText(unsigned int numChars);
+    string getRandomText(unsigned int numCharsToGenerate);
 };
 
 #endif /* defined(__Random_Writer__TextGenerator__) */

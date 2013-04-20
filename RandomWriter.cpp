@@ -46,6 +46,7 @@ int main() {
     string fileName = getFile(fileStream);
     
     const int MARKOV_NUMBER = getMarkovNumber();
+    const int NUM_CHARS_PREDICTED = 1;
 
     // Step 2: Parse File
     //   Take in a file stream and just read it as a long string
@@ -61,16 +62,20 @@ int main() {
     //   (iii) num next chars
     // read string char-by-char and assemble
     // Map<string seed, Vector<string next word>>
-    SeedMapper mapper = SeedMapper(sourceText, MARKOV_NUMBER, 1);
+    SeedMapper mapper = SeedMapper(sourceText,
+                                   MARKOV_NUMBER,
+                                   NUM_CHARS_PREDICTED);
     Map<string, Vector<string> > seedMap = mapper.getSeedMap();
     string mostCommonSeed = mapper.getMostCommonSeed();
-    
+
     // Step 4: Generate Text
     // Take in:
     //   (i) seed
     //   (ii) seedMap
     // Iterate over seed map to generate random text
-    TextGenerator generator = TextGenerator(mostCommonSeed, seedMap);
+    TextGenerator generator = TextGenerator(mostCommonSeed,
+                                            MARKOV_NUMBER,
+                                            seedMap);
     string randomText = generator.getRandomText(2000);
     cout << randomText << endl;
 

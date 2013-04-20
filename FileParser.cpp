@@ -25,6 +25,9 @@ string FileParser::getSourceTextAsString() {
     string extra;
     while (!inputFile->eof()) {
         getline(*inputFile, line);
+        if (line.size() == 0) {
+            continue;
+        }
         extra = ((line.substr(line.size() - 1) != " ") ? " " : "");
         rawText += line + extra;
     }

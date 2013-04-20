@@ -15,11 +15,29 @@
 #include "TextGenerator.h"
 
 TextGenerator::TextGenerator(const string& inputSeed,
+                             const int& markovNumber,
                              const Map<string, Vector<string> >& inputSeedMap) {
     seed = inputSeed;
-    seedMap = inputSeedMap;
+    markovNum = markovNumber;
+    seedMap = &inputSeedMap;
 }
 
-string TextGenerator::getRandomText(unsigned int numChars) {
-    
+string TextGenerator::getRandomText(unsigned int numCharsToGenerate) {
+    string outputText = seed;
+    string currentSeed = seed;
+    Vector<string> possibleNextChars;
+    int nextCharsIndexNum = 0;
+
+    while (outputText.length() + numCharsPredicted <= numCharsToGenerate) {
+        if (!seedMap->containsKey(currentSeed)) {
+            return outputText;
+        }
+        
+        possibleNextChars = seedMap->get(currentSeed);
+        nextCharsIndexNum = randomInteger(0, possibleNextChars.size() - 1);
+        outputText += possibleNextChars.get(nextCharsIndexNum);
+        currentSeed = outputText.substr(outputText.length() - markovNum - 1);
+    }
+
+    return outputText;
 }
