@@ -12,6 +12,7 @@
  * http://google-styleguide.googlecode.com/svn/trunk/cpplint/cpplint.py
  */
 
+#include <string>
 #include "TextGenerator.h"
 
 TextGenerator::TextGenerator(const string& inputSeed,
@@ -34,7 +35,7 @@ string TextGenerator::getRandomText(unsigned int numCharsToGenerate) {
         if (!seedMap->containsKey(currentSeed)) {
             return outputText;
         }
-        
+
         possibleNextChars = seedMap->get(currentSeed);
         nextCharsIndexNum = randomInteger(0, possibleNextChars.size() - 1);
         outputText += possibleNextChars.get(nextCharsIndexNum);

@@ -33,7 +33,7 @@ Map<string, Vector<string> > SeedMapper::getSeedMap() {
 string SeedMapper::getMostCommonSeed() {
     string mostCommonSeed = "";
     int mostCommonSeedCount = -1;
-    foreach (string seed in seedFrequency) {
+    foreach(string seed in seedFrequency) {
         if (seedFrequency[seed] > mostCommonSeedCount) {
             mostCommonSeedCount = seedFrequency[seed];
             mostCommonSeed = seed;
@@ -57,7 +57,7 @@ void SeedMapper::processInputText() {
     for (int i = 0; i < lenTo; i++) {
         seed = rawInput.substr(i, markovNum);
         nextChars = rawInput.substr((i + markovNum), numCharsPredict);
-        
+
         // update seedMap, which contains a map from the seed
         //   to a vector of strings of length numCharsPredict that
         //   follow the seed

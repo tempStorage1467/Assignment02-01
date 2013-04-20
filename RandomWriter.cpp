@@ -44,9 +44,10 @@ int main() {
     // Step 1: Prompt User for Valid File Name and Markov Number
     ifstream fileStream;
     string fileName = getFile(fileStream);
-    
+
     const int MARKOV_NUMBER = getMarkovNumber();
     const int NUM_CHARS_PREDICTED = 1;
+    const int NUM_CHARS_TO_GENERATE = 2000;
 
     // Step 2: Parse File
     //   Take in a file stream and just read it as a long string
@@ -77,7 +78,7 @@ int main() {
                                             MARKOV_NUMBER,
                                             NUM_CHARS_PREDICTED,
                                             seedMap);
-    string randomText = generator.getRandomText(2000);
+    string randomText = generator.getRandomText(NUM_CHARS_TO_GENERATE);
     cout << randomText << endl;
 
     return 0;

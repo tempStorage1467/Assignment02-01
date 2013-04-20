@@ -12,8 +12,8 @@
  * http://google-styleguide.googlecode.com/svn/trunk/cpplint/cpplint.py
  */
 
-#ifndef __Random_Writer__TextGenerator__
-#define __Random_Writer__TextGenerator__
+#ifndef TEXTGENERATOR_H_
+#define TEXTGENERATOR_H_
 
 #include <iostream>
 #include <string>
@@ -35,4 +35,4 @@ class TextGenerator {
     string getRandomText(unsigned int numCharsToGenerate);
 };
 
-#endif /* defined(__Random_Writer__TextGenerator__) */
+#endif  // TEXTGENERATOR_H_
