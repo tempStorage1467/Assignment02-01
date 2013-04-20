@@ -45,7 +45,16 @@ string SeedMapper::getMostCommonSeed() {
 void SeedMapper::processInputText() {
     string seed = "";
     string nextChars = "";
-    for (int i = 0; i < (rawInput.length() - markovNum); i++) {
+
+    // Determine how many times to iterate over raw input string.
+    //   Need to shorten iterations based upon markovNum as we must
+    //   ensure that there are enough chars left in the seed for the string
+    //   Need to shorten iteratiosn based upon numCharsPredict as we must
+    //   ensure that there are enough chars to the right of the current
+    //   position to predict (i.e., if we want to predict 2 chars, we need
+    //   to ensure that there are two chars left).
+    int lenTo = rawInput.length() - markovNum - numCharsPredict + 1;
+    for (int i = 0; i < lenTo; i++) {
         seed = rawInput.substr(i, markovNum);
         nextChars = rawInput.substr((i + markovNum), numCharsPredict);
         
@@ -57,7 +66,8 @@ void SeedMapper::processInputText() {
         seedMap.put(seed, next);
 
         // update seedFrequency, which contains a map between the seed
-        //   and the number of times that seed occurs
+        //   and the number of times that seed occurs.
+        //   Seems very inefficient to iterate over a bunch of vectors later.
         seedFrequency[seed] += 1;
     }
 }

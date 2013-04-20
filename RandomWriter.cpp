@@ -61,7 +61,8 @@ int main() {
     // read string char-by-char and assemble
     // Map<string seed, Vector<string next word>>
     SeedMapper mapper = SeedMapper(sourceText, MARKOV_NUMBER, 1);
-
+    Map<string, Vector<string> > seedMap = mapper.getSeedMap();
+    string mostCommonSeed = mapper.getMostCommonSeed();
     
     // Step 4: Generate Text
 
