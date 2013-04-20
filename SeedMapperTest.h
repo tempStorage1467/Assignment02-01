@@ -24,6 +24,8 @@ class SeedMapperTest {
  private:
     bool assertEquals(const Map<string, Vector<string> >& expected,
                       const Map<string, Vector<string> >& actual);
+    bool assertEquals(const Vector<string>& expected,
+                      const Vector<string>& actual);
     bool assertEquals(const string& expected,
                       const string& actual);
     void testGetSeedMap();

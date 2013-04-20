@@ -11,6 +11,7 @@
 		1A11660D17220DB200EC602B /* FileParserTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A11660B17220DB200EC602B /* FileParserTest.cpp */; };
 		1A116614172222AC00EC602B /* SeedMapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A116612172222AC00EC602B /* SeedMapper.cpp */; };
 		1A11661717222A5300EC602B /* SeedMapperTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A11661517222A5300EC602B /* SeedMapperTest.cpp */; };
+		1A575F8717230E55005089ED /* TextGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A575F8517230E55005089ED /* TextGenerator.cpp */; };
 		2B41FE01170E965800F12A5E /* RandomWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B41FE00170E965800F12A5E /* RandomWriter.cpp */; };
 		E3DDB4120D2F60C500348E1D /* libStanfordCPPLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DDB4110D2F60C500348E1D /* libStanfordCPPLib.a */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,8 @@
 		1A116613172222AC00EC602B /* SeedMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedMapper.h; sourceTree = "<group>"; };
 		1A11661517222A5300EC602B /* SeedMapperTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SeedMapperTest.cpp; sourceTree = "<group>"; };
 		1A11661617222A5300EC602B /* SeedMapperTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedMapperTest.h; sourceTree = "<group>"; };
+		1A575F8517230E55005089ED /* TextGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextGenerator.cpp; sourceTree = "<group>"; };
+		1A575F8617230E55005089ED /* TextGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextGenerator.h; sourceTree = "<group>"; };
 		2B41FE00170E965800F12A5E /* RandomWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RandomWriter.cpp; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Random Writer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Random Writer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +58,8 @@
 			isa = PBXGroup;
 			children = (
 				2B41FE00170E965800F12A5E /* RandomWriter.cpp */,
+				1A575F8517230E55005089ED /* TextGenerator.cpp */,
+				1A575F8617230E55005089ED /* TextGenerator.h */,
 				1A116612172222AC00EC602B /* SeedMapper.cpp */,
 				1A116613172222AC00EC602B /* SeedMapper.h */,
 				1A11661517222A5300EC602B /* SeedMapperTest.cpp */,
@@ -172,6 +177,7 @@
 				1A11660D17220DB200EC602B /* FileParserTest.cpp in Sources */,
 				1A116614172222AC00EC602B /* SeedMapper.cpp in Sources */,
 				1A11661717222A5300EC602B /* SeedMapperTest.cpp in Sources */,
+				1A575F8717230E55005089ED /* TextGenerator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

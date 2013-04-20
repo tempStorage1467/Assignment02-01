@@ -18,6 +18,7 @@
 #include "FileParserTest.h"
 #include "SeedMapper.h"
 #include "SeedMapperTest.h"
+#include "TextGenerator.h"
 
 using namespace std;
 
@@ -65,7 +66,13 @@ int main() {
     string mostCommonSeed = mapper.getMostCommonSeed();
     
     // Step 4: Generate Text
+    // Take in:
+    //   (i) seed
+    //   (ii) seedMap
+    // Iterate over seed map to generate random text
+    TextGenerator generator = TextGenerator(mostCommonSeed, seedMap);
+    string randomText = generator.getRandomText(2000);
+    cout << randomText << endl;
 
-    // [TODO: fill in the code]
     return 0;
 }
