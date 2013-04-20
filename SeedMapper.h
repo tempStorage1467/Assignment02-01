@@ -12,7 +12,6 @@
  * http://google-styleguide.googlecode.com/svn/trunk/cpplint/cpplint.py
  */
 
-
 #ifndef SEEDMAPPER_H_
 #define SEEDMAPPER_H_
 
@@ -28,14 +27,16 @@ class SeedMapper {
     string rawInput;
     int markovNum;
     int numCharsPredict;
-    SeedMapper(const string& input,
-               const int& markovNumber,
-               const int& numberCharsPredict);
     Map<string, Vector<string> > seedMap;
+    Map<string, int> seedFrequency;
+    void processInputText();
 
  public:
-    SeedMapper(string rawInput, int markovNum, int numCharsPredict);
+    SeedMapper(const string& rawInput,
+               const int& markovNum,
+               const int& numCharsPredict);
     Map<string, Vector<string> > getSeedMap();
+    string getMostCommonSeed();
 };
 
 #endif  // SEEDMAPPER_H_

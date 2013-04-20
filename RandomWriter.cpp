@@ -16,6 +16,8 @@
 #include "filelib.h"
 #include "FileParser.h"
 #include "FileParserTest.h"
+#include "SeedMapper.h"
+#include "SeedMapperTest.h"
 
 using namespace std;
 
@@ -32,8 +34,11 @@ int getMarkovNumber() {
 
 int main() {
     // Step 0: Run Tests
-    FileParserTest test = FileParserTest();
-    test.runTests();
+    FileParserTest fileTest = FileParserTest();
+    fileTest.runTests();
+
+    SeedMapperTest mapTest = SeedMapperTest();
+    mapTest.runTests();
 
     // Step 1: Prompt User for Valid File Name and Markov Number
     ifstream fileStream;
@@ -55,7 +60,8 @@ int main() {
     //   (iii) num next chars
     // read string char-by-char and assemble
     // Map<string seed, Vector<string next word>>
-    
+    SeedMapper mapper = SeedMapper(sourceText, MARKOV_NUMBER, 1);
+
     
     // Step 4: Generate Text
 
